@@ -9,3 +9,5 @@ Build Command: /opt/render/project/src/.venv/bin/python -m pip install --upgrade
 Start Command: python -m nltk.downloader words && python -m nltk.downloader stopwords && gunicorn main:app
 
 cname mapped to: https://resume-parse.immanuel.co/uploader
+
+cname mapped to: https://resume-extract.immanuel.co/uploader
