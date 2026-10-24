@@ -1,0 +1,15 @@
+# Direct dependencies. requirements.txt is the fully pinned lock compiled from this file;
+# Render installs the lock, so a new upstream release can't change what gets built:
+#   uv pip compile requirements.in --universal --python-version 3.11 -o requirements.txt
+en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.3.1/en_core_web_sm-2.3.1.tar.gz#sha256=06c80936324012d1223291d2af41a5229e746dc2dee8fe31a532666ee3d18aaa
+Flask
+gunicorn
+waitress
+pyresparser
+nltk
+# pyresparser ships a spaCy 2.x model; 2.3.9 is the last 2.x and has wheels up to Python 3.11.
+spacy>=2.3.9,<2.4
+# blis/thinc 7.x wheels are built against the NumPy 1.x ABI.
+numpy<2
+# spaCy 2.x imports pkg_resources, which setuptools removed in 82.
+setuptools<82

@@ -1,9 +1,10 @@
 
 hosted : render.com - python free hosting
 name: sample-flask
-repo: https://github.com/immi5556/flask-extract-resume
+repo: https://github.com/ir-dev/flask-extract-resume
 Branch: main
 Root Directory: flask-web
+Python: 3.11, from flask-web/.python-version (also set env PYTHON_VERSION=3.11.11 on the service)
 Build Command: /opt/render/project/src/.venv/bin/python -m pip install --upgrade pip && pip install -r requirements.txt
 Start Command: python -m nltk.downloader words && python -m nltk.downloader stopwords && gunicorn main:app
 

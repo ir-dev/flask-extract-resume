@@ -9,9 +9,9 @@
 
     <ol>
         <!-- For loop logic of jinja template -->
-        {%for i in range(0, len)%}
+        {%for f in files%}
 
-        <li>{{files[i]}}</li>
+        <li><a href="{{ url_for('dir_listing', req_path=f.path) }}">{{f.name}}</a>{% if f.size is not none %} ({{f.size}} bytes){% endif %}</li>
         {%endfor%}
 
     </ol>
